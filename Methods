@@ -1,0 +1,39 @@
+**Baseline Sampling**
+
+The Heart Disease Data Set provided for analysis is the result of a study conducted in the late 1980s by various institutions, including the Hungarian Institute of Cardiology, the Zurich and Basel University Hospitals in Switzerland, and the Long Beach and Cleveland Clinic Foundation in the United States of America. The study involved a total of 303 participants, comprising 97 females and 206 males, with ages ranging from 29 to 77. During the study, doctors and practitioners conducted several tests and collected data on 14 variables or characteristics, including the patients' maximum heart rate, cholesterol levels, and more.
+
+**Variables Characteristics**
+
+1. Age: The person’s age in years
+2. Sex: The person’s gender (0 = female, 1 = male)
+3. Cp: Chest pain type
+   •	Value 1: Typical angina
+   •	Value 2: Atypical angina
+   •	Value 3: Non-angina pain
+   •	Value 4: Asymptomatic
+4. Trestbps: The person’s resting blood pressure (in mm Hg on admission to the 
+hospital)
+5. Chol: The person’s cholesterol measured in mg/dl
+6. Fbs: The person’s fasting blood sugar (fasting blood sugar > 120 mg/dl; 0 = 
+False, 1 = True)
+7. Restecg: The person’s resting electrocardiographic results
+   •	Value 0: Normal
+   •	Value 1: Having ST-T wave abnormality (T wave inversions and/or ST 
+      elevation or depression of > 0.05 mV)
+   •	Value 2: Showing probable or definite left ventricular hypertrophy by 
+      Estes' criteria
+8. Thalach: The maximum heartrate the person can achieve
+9. Exang: Exercise induced angina (0 = No, 1 = Yes)
+10. Oldpeak: ST depression induced by exercise relative to rest
+11. Slope: The slope of the peak exercise ST segment
+    •	Value 1: Upsloping
+    •	Value 2: Flat
+    •	Value 3: Downsloping
+12. Ca: The number of major blood vessels (0-3)
+13. Thal: Sortcut for a blood disorder called Thalassemia
+    •	Value 3: Normal
+    •	Value 6: Fixed defect
+    •	Value 7: Reversable defect
+14. Num: The diagnosis of heart disease
+    •	Value 0: < 50% diameter narrowing (No heart disease)
+    •	Value 1: > 50% diameter narrowing (Heart disease)
