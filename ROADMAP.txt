@@ -16,14 +16,14 @@ the Hungarian Institute of Cardiology (Budapest), the Zurich and Basel Universit
 
 Week 1: Introduction, Baseline Sampling, Variables Characteristics
 - [x] Write introduction section
-- [ ] Give data insight
-- [ ] Describe the characteristics of the variables
+- [x] Give data insight
+- [x] Describe the characteristics of the variables
 
 <!DOCTYPE html>
 <html>
 <body>
 
-<p><strong>Week 1:</strong> 0% progress</p>
+<p><strong>Week 1:</strong> 66% progress</p>
 
 </body>
 </html>
