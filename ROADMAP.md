@@ -19,14 +19,7 @@ Week 1: Introduction, Baseline Sampling, Variables Characteristics
 - [x] Give data insight
 - [x] Describe the characteristics of the variables
 
-<!DOCTYPE html>
-<html>
-<body>
 
-<p><strong>Week 1:</strong> 66% progress</p>
-
-</body>
-</html>
 
 Week 2: Descriptive Statistics
 - [ ] Split variables between quantitative and qualitative
@@ -35,14 +28,7 @@ Week 2: Descriptive Statistics
 - [ ] Create correlation heatmap
 
 
-<!DOCTYPE html>
-<html>
-<body>
 
-<p><strong>Week 2:</strong> 0% progress</p>
-
-</body>
-</html>
 
 Week 3: Feature Selection & Logistic Regression & Naïve Bayes
 - [ ] Perform feature selection
@@ -50,14 +36,7 @@ Week 3: Feature Selection & Logistic Regression & Naïve Bayes
 - [ ] Implement Naïve Bayes
 
 
-<!DOCTYPE html>
-<html>
-<body>
 
-<p><strong>Week 3:</strong> 0% progress</p>
-
-</body>
-</html>
 
 
 Week 4: K-Mean & Apriori
@@ -67,13 +46,6 @@ Week 4: K-Mean & Apriori
 - [ ] Use Apriori to discover interesting relationships and patterns
 
 
-<!DOCTYPE html>
-<html>
-<body>
 
-<p><strong>Week 4:</strong> 0% progress</p>
-
-</body>
-</html>
 
 
