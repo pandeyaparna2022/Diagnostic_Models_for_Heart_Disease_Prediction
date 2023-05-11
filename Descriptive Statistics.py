@@ -200,3 +200,11 @@ plt.show()
 #save the plot
 fig.savefig('./Correlation Heatmap', bbox_inches='tight')
 ###-------------------------------------------------------------------------###
+
+
+
+#Pylint
+# (base) C:\Users\pandapar\Desktop\Uni_courses_2022\2023\Python\project>pylint python_project_ap_sg_draft_1.py
+#
+#-------------------------------------------------------------------
+#Your code has been rated at 10.00/10 (previous run: 9.92/10, +0.08)
