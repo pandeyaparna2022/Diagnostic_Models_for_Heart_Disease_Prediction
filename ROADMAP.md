@@ -22,10 +22,10 @@ Week 1: Introduction, Baseline Sampling, Variables Characteristics
 
 
 Week 2: Descriptive Statistics
-- [ ] Split variables between quantitative and qualitative
-- [ ] Create bar charts and histograms for quantitative variables
-- [ ] Create bar charts for qualitative variables
-- [ ] Create correlation heatmap
+- [x] Split variables between quantitative and qualitative
+- [x] Create bar charts and histograms for quantitative variables
+- [x] Create bar charts for qualitative variables
+- [x] Create correlation heatmap
 
 
 
