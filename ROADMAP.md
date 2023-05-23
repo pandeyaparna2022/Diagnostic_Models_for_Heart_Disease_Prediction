@@ -31,9 +31,9 @@ Week 2: Descriptive Statistics
 
 
 Week 3: Feature Selection & Logistic Regression & Naïve Bayes
-- [ ] Perform feature selection
-- [ ] Implement Logistic Regression
-- [ ] Implement Naïve Bayes
+- [x] Perform feature selection
+- [x] Implement Logistic Regression
+- [x] Implement Naïve Bayes
 
 
 
@@ -42,8 +42,7 @@ Week 3: Feature Selection & Logistic Regression & Naïve Bayes
 Week 4: K-Mean & Apriori
 - [ ] Implement K-means
 - [ ] Use K-means to discover patterns
-- [ ] Implement Apriori
-- [ ] Use Apriori to discover interesting relationships and patterns
+
 
 
 
