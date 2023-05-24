@@ -39,7 +39,7 @@ Week 3: Feature Selection & Logistic Regression & Naïve Bayes
 
 
 
-Week 4: K-Mean & Apriori
+Week 4: K-Mean 
 - [ ] Implement K-means
 - [ ] Use K-means to discover patterns
 
