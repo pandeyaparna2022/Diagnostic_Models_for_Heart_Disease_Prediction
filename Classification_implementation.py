@@ -17,11 +17,14 @@ import numpy as np
 import pandas as pd
 import statsmodels.api as sm
 from scipy.stats import norm
+from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.metrics import *
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import classification_report
-from sklearn.ensemble import ExtraTreesClassifier
+import seaborn as sns
+import matplotlib.pyplot as plt
+
 ###-------------------------------------------------------------------------###
 ###                      Feature Classification                        ###
 ###-------------------------------------------------------------------------###
@@ -41,10 +44,6 @@ print(model.feature_importances_)
 #use inbuilt class feature_importances of tree based classifiers
 feat_importances = pd.Series(model.feature_importances_, index=explainatory_variable.columns)
 feat_importances.nlargest(13).plot(kind='barh')
-plt.show()
-
-
-
 
 ###-------------------------------------------------------------------------###
 ###                      logistic regression for classification                         ###
@@ -52,7 +51,7 @@ plt.show()
 
 
 # run logistic regression analysis on the data
-model = LogisticRegression2()
+model = LogisticRegression2(split_data=True)
 model.fit(df,outcome)
 #model.fit(df,outcome,'age','trestbps','chol','thalach','oldpeak')
 print(model.Summary(df))
@@ -77,7 +76,7 @@ X,y =binary_data(df,outcome)
 logit_model = sm.Logit(y, sm.add_constant(X))
 #res = binonmial_model.fit()
 res = logit_model.fit()
-res.summary()
+print(res.summary())
 
 ###-------------------------------------------------------------------------###
 ###                      Naive Bayes Classification                         ###
@@ -92,8 +91,8 @@ gnb = GaussianNB()
 y_train = y_train.flatten()
 gnb.fit(x_train,y_train)
 # Predict the outcome in test set
-y_pred = classifier.predict(x_test)
-
+y_pred = gnb.predict(x_test)
+cm_test = confusion_matrix(y_pred, y_test)
 # Precision, recall, F1-score, and support for each class
 print(classification_report(y_test,y_pred)) 
 ax = plt.subplot()

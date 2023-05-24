@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import scipy.stats
-from sklearn.metrics import confusion_matrix
+
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -102,79 +102,89 @@ class LogisticRegression2:
         Returns:
             LogisticRegression model: Returns an instance of the LogisticRegression 
             class with the trained weights.
+            
+        try and one except block: Checks if the outcome if binary variable or not
+        and raises exception if the outcome variable is not binary
         """
-        if self.split_data:
-            df, self.df_test = self.__split_data(df)
+        
+        if len(df[outcome].unique()) ==2:
+            msg= "Outcome is binary. We can perform logistic regression"
+        try:
+            print(msg)        
+            if self.split_data:
+                df, self.df_test = self.__split_data(df)
         
         
         # make a list of all variables in the dataframe 
-        self.var = list(df.columns)
+            self.var = list(df.columns)
         # check if any variable was specified by the user to be used as explanatory
         # variable if so only consider those as explanatory variables
-        if len(explanatory) != 0:
-            self.var = list(set(explanatory).intersection(var))
+            if len(explanatory) != 0:
+                self.var = list(set(explanatory).intersection(var))
         # add the oucome variable to this list   
-            self.var.append(outcome)
+                self.var.append(outcome)
               
-        self.outcome=outcome      
+            self.outcome=outcome      
         # remove all the other variables from the input dataframe
-        df = df[self.var]
+            df = df[self.var]
         # make a list of only the explanatory variables
-        self.explanatory_var=list(df.columns[df.columns != outcome])
+            self.explanatory_var=list(df.columns[df.columns != outcome])
         # separate the data into explanatory and outcome data
-        X, y = self.__binary_data(df, outcome)
+            X, y = self.__binary_data(df, outcome)
         
         # normalize and standardize the data for explainatory variable      
-        X_norm =self.__normalize_features(X)
+            X_norm =self.__normalize_features(X)
         # add a column of ones for intercept
-        X_norm = self.__add_intercept(X_norm)
+            X_norm = self.__add_intercept(X_norm)
         # convert outcome into a vector
-        y = y.flatten()
+            y = y.flatten()
         # initialize weights/coefficients as zeros
-        theta_norm = np.zeros(X_norm.shape[1])
+            theta_norm = np.zeros(X_norm.shape[1])
         # for the number of iteration specified, for every iteration calculate the 
         # calculate the weight for each explanatory variable, calculate the gradient
         # update the coefficient weight based on the gradient and the learning rate
         # calculate the loss
-        for i in range(self.num_iter):
-            z = np.dot(X_norm, theta_norm)
-            h = self.__sigmoid(z)
-            gradient = np.dot(X_norm.T, (h - y)) / y.size
-            theta_norm -= self.learning_rate * gradient
-            y = y
-            if self.verbose:
-                print(self.__loss(h, y))
+            for i in range(self.num_iter):
+                z = np.dot(X_norm, theta_norm)
+                h = self.__sigmoid(z)
+                gradient = np.dot(X_norm.T, (h - y)) / y.size
+                theta_norm -= self.learning_rate * gradient
+                y = y
+                if self.verbose:
+                    print(self.__loss(h, y))
                     
         
         # denormalize theta with std and scale the intercept with theta_norm*mean/std
-        theta_temp = np.multiply(theta_norm, np.insert(1/np.std(X, axis=0),0,1))
+            theta_temp = np.multiply(theta_norm, np.insert(1/np.std(X, axis=0),0,1))
         # rescale intercept with means
-        theta_temp[0] = theta_temp[0] + np.sum(np.multiply(theta_temp[1:],-np.mean(X, axis=0)))
-        self.theta = theta_temp
+            theta_temp[0] = theta_temp[0] + np.sum(np.multiply(theta_temp[1:],-np.mean(X, axis=0)))
+            self.theta = theta_temp
         #print(self.theta)
 
-        X = self.__add_intercept(X)
+            X = self.__add_intercept(X)
         # make a copy of the explanatory variable and insert an empty space at index 0
-        ex = self.explanatory_var.copy()
-        ex.insert(0, "1")
+            ex = self.explanatory_var.copy()
+            ex.insert(0, "1")
         
         # calculate the probability of the outcome of the dataset based on the 
         # coefficients we just calculated and use it to calculate covariance matrix
-        prob = self.__sigmoid(np.dot(X, self.theta))
-        V = np.diagflat(np.multiply(prob, (1 - prob)))
+            prob = self.__sigmoid(np.dot(X, self.theta))
+            V = np.diagflat(np.multiply(prob, (1 - prob)))
         # calculate the covariance matrix
-        covLogit = np.linalg.inv(np.dot(np.dot(X.T, V), X))
+            covLogit = np.linalg.inv(np.dot(np.dot(X.T, V), X))
         # Calculate the standard error from the covariance matrix
-        self.se = np.sqrt(np.diag(covLogit))
-        print("")
-        print('---------------------------------------------------------------------')
-        for i in range(len(self.theta)):
-            if i !=(len(self.theta)-1):
-                print(f"{self.theta[i]} * {ex[i]} + ", end='')
-            else:
-                print(f"{self.theta[i]} * {ex[i]}")
-
-        print('                                         ')
+            self.se = np.sqrt(np.diag(covLogit))
+            print("")
+            print('---------------------------------------------------------------------')
+            for i in range(len(self.theta)):
+                if i !=(len(self.theta)-1):
+                    print(f"{self.theta[i]} * {ex[i]} + ", end='')
+                else:
+                    print(f"{self.theta[i]} * {ex[i]}")
+                    
+                print('                                         ')
+        except:            
+            print("The outcome is not bianary. Cannot perform logistic regression.")
 
         #return self.theta
         
@@ -183,6 +193,7 @@ class LogisticRegression2:
         """Display the summary of the logistic regression including the test statistics"""
         if self.split_data:
             df, self.df_test = self.__split_data(df)
+        
         df = df[self.var]
         # Residual degree of freedom
         X, y = self.__binary_data(df, self.outcome)
@@ -332,17 +343,13 @@ class LogisticRegression2:
 
         Returns:
             None: Produces visualization or confusion matrix.
-
-        Examples:
-            >>> # Create and train a logistic regression model
-            >>> model = LogisticRegression()
-            >>> model.fit(X_train, y_train)
-            >>> 
-            >>> # Visualize the accuracy of the model using a confusion matrix
-            >>> model.vizualize_results(X_test, y_test, method='confusion_matrix')
+           
         """
+        
         matrix=self.confusion_matrix(df_test)
-        sns.heatmap(matrix, annot=True, cmap='Blues')
+        print(matrix)
+        plt.rcParams["figure.figsize"] = (10,10)
+        sns.heatmap(matrix, annot=True, cmap='Blues',fmt='d')
         plt.title('Confusion Matrix')
         plt.xlabel('Predicted Label')
         plt.ylabel('True Label')
