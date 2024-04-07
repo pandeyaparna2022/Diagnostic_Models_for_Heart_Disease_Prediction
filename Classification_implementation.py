@@ -10,7 +10,6 @@ Created on Sat May 20 11:51:53 2023
 
 @author: Aparna
 """
-
 import pytest
 from regression_class import LogisticRegression2
 import numpy as np
