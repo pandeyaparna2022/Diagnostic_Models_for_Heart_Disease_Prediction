@@ -5,7 +5,6 @@ import scipy.stats
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-
 """Creates Logictic Regression model from a given set of data
 
         Attributes:
