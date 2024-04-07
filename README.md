@@ -1,4 +1,4 @@
-# Advanced_Python
+# Python code
 
 Thank you for your interest in this project repository that we hope will be useful. This README document is a summary of how we (the coders) are going to analyse the Heart Disease Dataset, which was produced as a result of a study conducted in the late 1980s by the Hungarian Institute of Cardiology (Budapest), the Zurich and Basel University Hospitals (Switzerland), and the Long Beach and Cleveland Clinic Foundation (Long Beach, United States of America). The following points describe the main characteristics of the analysis plan:
 
