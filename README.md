@@ -61,10 +61,7 @@ This database contains 76 attributes, but all published experiments refer to usi
 
    - Naïve Bayes (to make quick predictions regarding possibility of suffering cardiovascular disease)
 
-   - K-means (to group the given data and discover underlying patterns)
 
-# Note:
-This is an ongoing effort so more updates and details will be addeda as the project progresses. Please check the file ROADMAP.md for more details on milestones and planned tasks.
 
 # License
 
