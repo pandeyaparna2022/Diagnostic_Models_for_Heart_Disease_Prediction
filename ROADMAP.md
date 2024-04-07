@@ -12,16 +12,16 @@ the Hungarian Institute of Cardiology (Budapest), the Zurich and Basel Universit
 
 
 
-**WEEK BY WEEK MILESTONES**
+**Major MILESTONES**
 
-Week 1: Introduction, Baseline Sampling, Variables Characteristics
+Part 1: Introduction, Baseline Sampling, Variables Characteristics
 - [x] Write introduction section
 - [x] Give data insight
 - [x] Describe the characteristics of the variables
 
 
 
-Week 2: Descriptive Statistics
+Part 2: Descriptive Statistics
 - [x] Split variables between quantitative and qualitative
 - [x] Create bar charts and histograms for quantitative variables
 - [x] Create bar charts for qualitative variables
@@ -30,18 +30,12 @@ Week 2: Descriptive Statistics
 
 
 
-Week 3: Feature Selection & Logistic Regression & Naïve Bayes
+Part 3: Feature Selection & Logistic Regression & Naïve Bayes
 - [x] Perform feature selection
-- [x] Implement Logistic Regression
+- [x] Implement Logistic Regression from scratch
 - [x] Implement Naïve Bayes
 
 
-
-
-
-Week 4: K-Mean 
-- [ ] Implement K-means
-- [ ] Use K-means to discover patterns
 
 
 
